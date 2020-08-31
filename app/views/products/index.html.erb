@@ -1,0 +1,15 @@
+<h1>Products</h1>
+
+<%= form_for @new_product do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= @new_product.errors[:name].first %>
+  <%= f.label :price %>
+  <%= f.text_field :price, type: :tel %>
+  <%= @new_product.errors[:price].first %>
+  <%= f.submit %>
+<% end %>
+
+<% @products.each do |p| %>
+  <p><%= p.name %> - <%= p.price %></p>
+<% end %>
